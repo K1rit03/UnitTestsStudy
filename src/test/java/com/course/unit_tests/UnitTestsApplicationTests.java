@@ -8,6 +8,7 @@ class UnitTestsApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("Hellow JUnit 5!");
 	}
 
 }
