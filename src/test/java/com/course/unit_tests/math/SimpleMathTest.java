@@ -48,4 +48,26 @@ class  SimpleMathTest {
         assertEquals(expected, actual,
                 () -> firstNumber + "/" + secondNumber + " should be " + expected);
     }
+
+    @Test
+    void testSquareRoot(){
+        Simplemath math = new Simplemath();
+        Double firstNumber = 4D;
+        Double actual = math.squareRoot(4D);
+        Double expected = 2D;
+        assertEquals(expected, actual,
+                () -> "The square root of " + firstNumber + " should be " + expected);
+    }
+
+    @Test
+    void testMean(){
+        Simplemath math = new Simplemath();
+        Double firstNumber = 6.2D;
+        Double secondNumber = 2D;
+        Double actual = math.mean(6.2D, 2D);
+        Double expected = 4.1D;
+        assertEquals(expected, actual,
+                () -> "The mean of " + firstNumber + " and " + secondNumber + " should be " + expected);
+    }
 }
+
