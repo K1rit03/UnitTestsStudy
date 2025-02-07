@@ -2,11 +2,17 @@ package com.course.unit_tests.math;
 
 import static org.junit.jupiter.api.Assertions.* ;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("Test Math Operations in Simplemath Class ")
 class SimpleMathTest {
+    @BeforeAll
+    static void setup(){
+        System.out.println("Running Tests");
+    }
 
     @Test
     @DisplayName("Test 6.2 + 2 = 8.2")
@@ -14,6 +20,7 @@ class SimpleMathTest {
         Simplemath math = new Simplemath();
         Double firstNumber = 6.2D;
         Double secondNumber = 2D;
+
         Double actual = math.sum(6.2D, 2D);
         Double expected = 8.2D;
         assertEquals(expected, actual,
@@ -26,6 +33,7 @@ class SimpleMathTest {
         Simplemath math = new Simplemath();
         Double firstNumber = 6.2D;
         Double secondNumber = 2D;
+
         Double actual = math.subtraction(6.2D, 2D);
         Double expected = 4.2D;
         assertEquals(expected, actual,
@@ -38,6 +46,7 @@ class SimpleMathTest {
         Simplemath math = new Simplemath();
         Double firstNumber = 6.2D;
         Double secondNumber = 2D;
+
         Double actual = math.multiplication(6.2D, 2D);
         Double expected = 12.4D;
         assertEquals(expected, actual,
@@ -50,6 +59,7 @@ class SimpleMathTest {
         Simplemath math = new Simplemath();
         Double firstNumber = 6.2D;
         Double secondNumber = 2D;
+
         Double actual = math.division(6.2D, 2D);
         Double expected = 3.1D;
         assertEquals(expected, actual,
@@ -83,9 +93,15 @@ class SimpleMathTest {
         Simplemath math = new Simplemath();
         Double firstNumber = 6.2D;
         Double secondNumber = 2D;
+
         Double actual = math.mean(6.2D, 2D);
         Double expected = 4.1D;
         assertEquals(expected, actual,
                 () -> "The mean of " + firstNumber + " and " + secondNumber + " should be " + expected);
+    }
+
+    @AfterAll
+    static void cleanup(){
+        System.out.println("Running Tests");
     }
 }
